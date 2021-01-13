@@ -2,12 +2,12 @@ const button = document.querySelector(".get-jokes").addEventListener("click", ge
 
 function generateJokes(e) {
 
-    const number = document.querySelector("input[type=number]").value;
-    console.log(number);
+    const jokeNumber = document.querySelector("input[type=number]").value;
+    console.log(jokeNumber);
 
     //XMLHttpRequest
     // const xhr = new XMLHttpRequest();
-    // xhr.open("GET", `http://api.icndb.com/jokes/random/${number}`, true);
+    // xhr.open("GET", `http://api.icndb.com/jokes/random/${jokeNumber}`, true);
     // xhr.onload = function () {
     //     if (this.status === 200) {
     //         const response = JSON.parse(this.responseText);
@@ -29,7 +29,7 @@ function generateJokes(e) {
     //FETCH
     let output = "";
 
-    fetch(`http://api.icndb.com/jokes/random/${number}`)
+    fetch(`http://api.icndb.com/jokes/random/${jokeNumber}`)
         .then(function (response) {
             return response.json();
         })
